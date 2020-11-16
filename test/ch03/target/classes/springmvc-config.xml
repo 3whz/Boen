@@ -29,8 +29,9 @@
 		<!-- 后缀 -->
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<!--	解决拦截-->
-	<mvc:default-servlet-handler/>
-	<!--	注释-->
-	<mvc:annotation-driven/>
+
+<!--	&lt;!&ndash;	解决拦截&ndash;&gt;-->
+<!--	<mvc:default-servlet-handler/>-->
+<!--	&lt;!&ndash;	注释&ndash;&gt;-->
+<!--	<mvc:annotation-driven/>-->
 </beans>

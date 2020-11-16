@@ -59,6 +59,7 @@
                     <a href="#"><i class="fa fa-cogs"></i>
                         <span>Elements <i class="lnr lnr-chevron-right"></i></span></a>
                     <ul class="sub-menu-list">
+                        <li><a href="userList">列表</a> </li>
                         <li><a href="carousels.html">Carousels</a> </li>
                         <li><a href="cards.html">Default cards</a> </li>
                         <li><a href="people.html">People cards</a></li>

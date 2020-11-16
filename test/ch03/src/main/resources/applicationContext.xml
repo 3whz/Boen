@@ -59,4 +59,5 @@
         <!-- 扫描mapper所在的包 -->
         <property name="basePackage" value="cn.boen.gym.mapper"/>
     </bean>
+
 </beans>

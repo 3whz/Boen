@@ -50,5 +50,9 @@ public class GymController {
             return "login";
         }
     }
+    @GetMapping("/userList")
+    public String userFrom() {
+            return "admin/userList";
+    }
 
 }

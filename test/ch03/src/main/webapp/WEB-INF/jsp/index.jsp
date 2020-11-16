@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="sidebar-menu-collapsed">
+<body>
 
 
 </body>

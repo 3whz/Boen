@@ -6,4 +6,7 @@
     <typeAliases>
         <package name="cn.boen.gym.pojo"/>
     </typeAliases>
+    <mappers>
+        <mapper class="cn.boen.gym.mapper.UserMapper"/>
+    </mappers>
 </configuration>
