@@ -31,4 +31,9 @@ public class GymController {
             return "login";
         }
     }
+
+
+
+
+
 }

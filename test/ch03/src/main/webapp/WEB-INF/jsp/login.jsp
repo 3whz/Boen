@@ -20,7 +20,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 <div class="padding-all">
     <div class="header">
-        <h1>gym登录</h1>
+        <h1>gym后台登录</h1>
     </div>
 
     <div class="design-w3l">
