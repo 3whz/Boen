@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content=" Master  Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements"/>
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="//fonts.googleapis.com/css?family=Cormorant+SC:300,400,500,600,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 </head>
@@ -20,15 +20,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 <div class="padding-all">
     <div class="header">
-        <h1>gym后台登录</h1>
+        <h1>gym登录</h1>
     </div>
 
     <div class="design-w3l">
         <div class="mail-form-agile">
-            <form action="/ch03/loginAdmin" method="post">
-                <input type="text" name="account" placeholder="account" required=""/>
-                <input type="password"  name="password" class="padding" placeholder="Password" required=""/>
-                <input type="submit" value="login">
+            <form action="/ch03/login" method="post">
+                <input type="text" name="username" placeholder="用户名" required=""/>
+                <input type="password"  name="password" class="padding" placeholder="密码" required=""/>
+
+                <input type="submit" value="登录">
             </form>
         </div>
         <div class="clear" style="color: red">${msg}</div>
