@@ -1,5 +1,9 @@
 D:\Users\repositorys\repo1\test\ch03\src\main\java\cn\boen\gym\mapper\AdminMapper.java
+D:\Users\repositorys\repo1\test\ch03\src\main\java\cn\boen\gym\pojo\User.java
+D:\Users\repositorys\repo1\test\ch03\src\main\java\cn\boen\gym\service\impl\UserServiceImpl.java
 D:\Users\repositorys\repo1\test\ch03\src\main\java\cn\boen\gym\controller\GymController.java
 D:\Users\repositorys\repo1\test\ch03\src\main\java\cn\boen\gym\service\AdminService.java
+D:\Users\repositorys\repo1\test\ch03\src\main\java\cn\boen\gym\service\UserService.java
 D:\Users\repositorys\repo1\test\ch03\src\main\java\cn\boen\gym\service\impl\AdminServiceImpl.java
 D:\Users\repositorys\repo1\test\ch03\src\main\java\cn\boen\gym\pojo\Admin.java
+D:\Users\repositorys\repo1\test\ch03\src\main\java\cn\boen\gym\mapper\UserMapper.java

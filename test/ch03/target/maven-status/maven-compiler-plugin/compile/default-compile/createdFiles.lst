@@ -1,5 +1,9 @@
 cn\boen\gym\controller\GymController.class
-cn\boen\gym\pojo\Admin.class
 cn\boen\gym\service\impl\AdminServiceImpl.class
-cn\boen\gym\mapper\AdminMapper.class
+cn\boen\gym\mapper\UserMapper.class
+cn\boen\gym\service\UserService.class
 cn\boen\gym\service\AdminService.class
+cn\boen\gym\pojo\User.class
+cn\boen\gym\service\impl\UserServiceImpl.class
+cn\boen\gym\pojo\Admin.class
+cn\boen\gym\mapper\AdminMapper.class

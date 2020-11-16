@@ -32,7 +32,7 @@
 
         <!-- logo start -->
         <div class="logo">
-            <h1><a href="../../index.html">Collective</a></h1>
+            <h1><a href="../../../index.html">Collective</a></h1>
         </div>
 
         <!-- if logo is image enable this -->
@@ -45,7 +45,7 @@
         <!-- //image logo -->
 
         <div class="logo-icon text-center">
-            <a href="../../index.html" title="logo"><img src="assets/images/logo.png" alt="logo-icon"> </a>
+            <a href="../../../index.html" title="logo"><img src="assets/images/logo.png" alt="logo-icon"> </a>
         </div>
         <!-- //logo end -->
 
@@ -53,7 +53,7 @@
 
             <!-- sidebar nav start -->
             <ul class="nav nav-pills nav-stacked custom-nav">
-                <li class="active"><a href="../../index.html"><i class="fa fa-tachometer"></i><span> Dashboard</span></a>
+                <li class="active"><a href="../../../index.html"><i class="fa fa-tachometer"></i><span> Dashboard</span></a>
                 </li>
                 <li class="menu-list">
                     <a href="#"><i class="fa fa-cogs"></i>
@@ -190,7 +190,7 @@
                                 </a>
                                 <ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
                                     <li class="user-info">
-                                        <h5 class="user-name">${user_session}</h5>
+                                        <h5 class="user-name">${admin_session.account}</h5>
                                         <span class="status ml-2">Available</span>
                                     </li>
                                     <li> <a href="#"><i class="lnr lnr-user"></i>My Profile</a> </li>
@@ -216,7 +216,7 @@
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb my-breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../../../index.html">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                 </ol>
             </nav>

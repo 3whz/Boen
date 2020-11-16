@@ -14,7 +14,7 @@ public class AdminServiceImpl implements AdminService {
     private AdminMapper adminMapper;
     @Override
     public Admin loginAdmin(Admin admin) {
-        Admin hadmin =(Admin)adminMapper.loginAdmin(admin);
-        return hadmin;
+        Admin admin2 =(Admin)adminMapper.loginAdmin(admin);
+        return admin2;
     }
 }

@@ -11,7 +11,8 @@ public class User {
     private String email;
     private String img;
     private int coach;
-
+    public User() {
+    }
     @Override
     public String toString() {
         return "User{" +

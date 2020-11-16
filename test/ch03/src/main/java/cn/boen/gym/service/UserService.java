@@ -5,11 +5,11 @@ import cn.boen.gym.pojo.User;
 import java.util.List;
 
 public interface UserService {
-    public User loginAdmin(User user);
+    public User loginUser(User user);
 
-    public List<User> UserFindAll();
+    public List<User> userFindAll();
 
-    public int UserSave();
+    public int userSave();
 
-    public int UserUpdate();
+    public int userUpdate();
 }

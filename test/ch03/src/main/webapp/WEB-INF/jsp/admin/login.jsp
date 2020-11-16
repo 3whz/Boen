@@ -25,7 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <div class="design-w3l">
         <div class="mail-form-agile">
-            <form action="/ch03/login" method="post">
+            <form action="/ch03/loginAdmin" method="post">
                 <input type="text" name="account" placeholder="account" required=""/>
                 <input type="password"  name="password" class="padding" placeholder="Password" required=""/>
                 <br> <span style="color: red">${msg}</span><br><br>
