@@ -8,5 +8,6 @@
     </typeAliases>
     <mappers>
         <mapper class="cn.boen.gym.mapper.UserMapper"/>
+        <mapper class="cn.boen.gym.mapper.AdminMapper"/>
     </mappers>
 </configuration>
