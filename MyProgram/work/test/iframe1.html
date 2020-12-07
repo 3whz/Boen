@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li
+            onclick="dynamicLoadIframe('login.html','','width:200px;height:200px;border-style:solid;border-width:5px;')">
+            点我</li>
+        <li id="myList">1</li>
+        <li id="myList">2</li>
+        <li id="myList">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+
+</html>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    function dynamicLoadIframe(url, callback, style) {
+        var body = document.getElementsByTagName('li')[5];
+        // var body2= document.getElementById("myList");
+        var iframei = document.getElementsByTagName('iframe');
+        alert(iframei.length);
+        // alert(iframei);
+        if (iframei.length == 0) {
+            var iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.style = style || 'display:none;width:0px;height:0px;';
+            iframe.id='iframe';
+            if (typeof (callback) == 'function') {
+                iframe.onload = iframe.onreadystatechange = function () {
+                    if (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") {
+                        callback();
+                        iframe.onload = iframe.onreadystatechange = null;
+                    }
+                };
+            }
+            body.appendChild(iframe);
+        }
+        else{
+            iframeid="aaaa.html";
+            var $iframe = $("#iframe");          
+            $iframe.attr("src", iframeid);
+        }
+        //  body2.appendChild(iframe);
+    }
+</script>

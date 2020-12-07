@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //序列化JSON.stringify(json)
+
+    var jsonArray = [];
+
+    jsonArray.push({ a: 1, b: 2 });
+    jsonArray.push({ a: 2, b: 3 });
+    console.log('jsonArray:' + jsonArray);
+    console.log('jsonArray1:' + JSON.stringify(jsonArray));
+
+    //反序列化JSON.parse(json)
+
+    var a = JSON.stringify(jsonArray);
+    var b = JSON.parse(a);
+
+    b.push({ a: 3, b: 4 });
+
+    console.log('b:' + b);
+
+    console.log('b1:' + JSON.stringify(b));
+</script>

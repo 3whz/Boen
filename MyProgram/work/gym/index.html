@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <!-- 资源引入 -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- 我的引入 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 资源引入 -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="//at.alicdn.com/t/font_2222363_0a3isic9blba.js"></script>
+</head>
+
+<body>
+    <div class="wrapper" id="wrapper">
+        <div class="wrapper_face" id="wrapper_face">
+            <div class="face1">
+                <div class="face1_head">
+                    <!-- 搜索框 -->
+                    <div class="select">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-search"></use>
+                        </svg>
+                        <input type="text" id="select" placeholder="搜索课程">
+                    </div>
+
+                    <batton id="select_opacity" style="display: none;">取消</batton>
+                </div>
+                <div class="face1_body" id="face1_face2">
+                    <!-- 轮播图 -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"> <img src="images/banner2.jpg" alt="" url="classify.html?id=24">
+                            </div>
+                            <div class="swiper-slide"> <img src="images/banner2.jpg" alt="" url="classify.html?id=2">
+                            </div>
+                            <div class="swiper-slide"> <img src="images/banner2.jpg" alt="" url="classify.html?id=1">
+                            </div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div>
+                        <!-- 如果需要导航按钮 -->
+                        <!-- <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div> -->
+                        <!-- 如果需要滚动条 -->
+                        <!-- <div class="swiper-scrollbar"></div> -->
+                    </div>
+                    <div class="toface2 gengduokecheng" url="classlist.html">
+                        <label>课程</label><svg class="icon" url="classlist.html" aria-hidden="true">
+                            <use xlink:href="#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                    <ul>
+                        <li><img src="images/banner2.jpg" alt="" url="oneclass.html?id=1">
+                            <div class="gymclass toface2" url="oneclass.html?id=1">
+                                <label url="oneclass.html?id=1">课程名</label>
+                                <div url="oneclass.html?id=1">
+                                    <span url="oneclass.html?id=1">k2难度</span>
+                                    <span url="oneclass.html?id=1">课程1</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 底部 -->
+                <div class="face1_bottom">
+                    <a href="#"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shouye"></use>
+                        </svg>
+                        <label style="font-size: 1.1rem; color: rgba(228, 0, 0, 0.884);">首页</label></a>
+                    <a href="exercise.html"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yundong_c"></use>
+                        </svg>
+                        <label style="color: rgb(80, 79, 79);">运动</label></a>
+                    <a href="staggerhour.html"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-cuofengjianshen_c"></use>
+                        </svg>
+                        <label style="color:rgb(80, 79, 79);">错峰健身</label></a>
+                    <a href="personalcenter.html"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-gerenzhongxin_c"></use>
+                        </svg>
+                        <label style="color: rgb(80, 79, 79);">个人中心</label></a>
+                </div>
+            </div>
+            <div class="face2">
+                <div class="face2_top">
+                    <!-- 头部 -->
+                    <svg class="icon" id="face2_face1" aria-hidden="true">
+                        <use xlink:href="#icon-arrow-left-bold"></use>
+                    </svg>
+                </div>
+                <!-- 放置内嵌网页 -->
+                <div class="body_iframe">
+                    <iframe src="404.html" width="100%" height="100%" class="col-lg-12" frameborder="0" scrolling="0"
+                        id="iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- 我的引入 -->
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>

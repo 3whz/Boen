@@ -1,0 +1,109 @@
+.head_img {
+    display: flex;
+    /* x轴不换行 */
+    flex-flow: row nowrap;
+    /* 靠边均分 */
+    justify-content: space-between;
+    margin: 1rem 0 1rem 0;
+}
+
+.head_img span {
+    margin-top: 1rem;
+}
+
+.img__wrapper {
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 14rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.head_img .icon {
+    /*通过设置font-size来该表图标大小*/
+    font-size: 1rem;
+    width: 1em;
+    height: 1em;
+    /*图标和文字相邻时垂直对齐*/
+    vertical-align: -0.15em;
+    /*通过设置color来改变svg颜色/fill*/
+    fill: currentColor;
+    /*path和stroke溢出vieBwox部分在IE下会显示
+normalize。css中也包含这行*/
+    overflow: hidden;
+    margin-top: 1.7rem;
+}
+
+
+.body_ul li {
+    line-height: 4rem;
+    width: 100%;
+    height: 4rem;
+    border-top: 1px solid rgb(221, 218, 218);
+    display: flex;
+    /* x轴不换行 */
+    flex-flow: row nowrap;
+    /* 靠边均分 */
+    justify-content: space-between;
+
+}
+
+.body_ul li .icon {
+    margin-top: 1.7rem;
+}
+
+.outlogin {
+    width: 10rem;
+    height: 2rem;
+    background-color: rebeccapurple;
+    line-height: 2rem;
+    text-align: center;
+    color: white;
+    border: yellow;
+    margin: 4rem 0 0 13rem;
+}
+
+/*  弹出 */
+#myModal {
+    top: auto;
+}
+
+.modal.fade .modal-dialog {
+    transform: translate3d(0, 10vh, 0);
+    margin: 0;
+}
+
+.modal.in .modal-dialog {
+    transform: translate3d(0, 0, 0);
+    margin: 0;
+}
+
+.modal-content {
+    border-radius: inherit;
+    border: none;
+}
+
+.body_ul li .btn {
+    background-color: white;
+    border: none;
+    color: #000;
+}
+
+.modal-body ul li {
+    width: 100%;
+    height: 2rem;
+}
+
+.modal_body_li{
+    background-color: rgb(231, 230, 227);
+}
+
+

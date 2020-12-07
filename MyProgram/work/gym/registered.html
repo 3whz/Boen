@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <!-- 资源引入 -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/registered.css">
+
+</head>
+
+<body>
+    <div class="body_w">
+        <h1>gym</h1>
+        <form action="index.html" method="POST">
+            <div class="form_input">
+                <div>
+                    <label>账号:</label>
+                    <input type="text" name="username" id="username">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-usercenter"></use>
+                    </svg>
+                </div>
+                <div>
+                    <label>密码:</label>
+                    <input type="password" name="password" id="password">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-unlock"></use>
+                    </svg><br>
+                </div>
+                <div>
+                    <label>密码:</label>
+                    <input type="password" name="password2" id="password2">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-unlock"></use>
+                    </svg><br>
+                </div>
+            </div>
+            <button type="button" onclick="ajaxFun()">注册</button>
+        </form>
+    </div>
+</body>
+
+</html>
+<!-- 资源引入 -->
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="assets/js/jquery.cookie.js"></script>
+<script src="//at.alicdn.com/t/font_2222363_0a3isic9blba.js"></script>
+<!-- 我的引入 -->
+<script src="js/common.js"></script>
+<script src="js/registered.js"></script>
+<script>
+    //结构高度计算
+    $(".body_w").css("height", $(window).height())
+    window.onresize = function () {
+        $(".body_w").css("height", $(window).height() + "px")
+    }
+
+    function ajaxFun() {
+        var aaa = $("#username").val()
+        var bbb = $("#password").val()
+        var bbb2 = $("#password2").val()
+        if (bbb == bbb2) {
+            if (bbb && aaa) {
+                $.ajax({
+                    url: "http://localhost:8081/SelectUser",
+                    data: { "username": aaa, "password": bbb },
+                    //data:"username=aaa&age=23",
+                    dataType: "json",
+                    type: "post",
+                    // cache: true,//true  缓存
+                    // async: true,// 异步  ， false 同步
+                    // contentType: "application/x-www/form-urlencoded",//application-json
+                    success: function (result, status) {//响应成功后回调               
+                        //创建 cookie，并设置 cookie 的有效路径，路径为网站的根目录
+                        //序列化对象数组   因为cookie只能这样存
+                        var user = JSON.stringify(result)
+                        $.cookie('user', user, { expires: 7, path: '/' });
+                        top.location.href = "personalcenter.html";
+                    },
+
+                    //fail
+                    error: function () {
+                        alert("账号或密码错误！")
+                    }
+                });
+            } else if (!aaa) {
+                alert("账号不能为空！")
+            } else {
+                alert("密码不能为空！")
+            }
+        }else{
+            alert("两次密码不一致！")
+        }
+
+    }
+
+</script>

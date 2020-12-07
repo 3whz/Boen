@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+</head>
+
+<body>
+	<ul>
+		<li></li>
+	</ul>
+</body>
+</html>
+<script src="assets/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+$(function () {
+		console.log($.ajax())	
+		var a=oneValues();	
+		$.ajax({
+			url: "http://localhost:8081/SelectGymClass",
+			
+			data: {"id":a},//携带参数
+			//data:"username=aaa&age=23",
+			dataType: "json",
+			type: "get",
+			// cache: true,//true  缓存
+			// async: true,// 异步  ， false 同步
+			// contentType: "application/x-www/form-urlencoded",//application-json
+			success: function (result, status) {//响应成功后回调
+				if (status == "success" && result.length != 0) {
+					var menu = "";
+					result.forEach(function (item) {
+						//字符串模板 拼接左侧选项菜单
+						menu += `
+						<li data-id="${item.id}">${item.name}</li>						
+						`;
+					})
+					$("ul").html(menu);
+				} else {
+					console.log("暂无数据")
+				}
+			},
+			//fail
+			error: function () {
+				alert("出错了")
+			}
+		});
+
+	});
+
+
+	//接收一个值
+	function oneValues() {
+            var result;
+            var url = window.location.search; //获取url中"?"符后的字串  
+            if (url.indexOf("?") != -1) {
+                result = url.substr(url.indexOf("=") + 1);
+            }     
+            return result;
+        }
+</script>

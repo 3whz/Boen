@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span class="rowd ros">头像</span>
+<input type="file" id="image-file" name="image-file" multiple="multiple" style="display: none;" οnchange="selectImage(this.files)">
+<img id="toux" src="image/upto.png" alt="" οnclick="document.getElementById('image-file').click();" style="width: 80px;height: 80px;margin-top: 10px">
+</body>
+</html>
+<script>
+    function selectImage(dt){
+   // alert(dt[0].name);
+    console.log(dt);
+    var file =  document.getElementById("image-file").files[0];
+    if (window.FileReader) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        //监听文件读取结束后事件
+        reader.onloadend = function (e) {
+            $("#toux").attr("src",e.target.result);    //e.target.result就是最后的路径地址
+        };
+    }
+
+    var file = document.getElementById("image-file").files[0];
+    var formData = new FormData();
+    formData.append('image-file', file);
+
+    $.ajax({
+        url: flag+'article/img/xxx/xxx' ,
+        type: 'POST',
+        enctype: 'multipart/form-data',
+        data: formData,
+        async: false,
+        cache: false,
+        contentType: false,
+        processData: false,
+        cache: false,
+        timeout: 600000,
+        success: function (data) {
+            console.log(data);
+            if (data!=null){
+                $("#toux").attr("src",flag+data.successObject);
+              
+            }
+        }
+    });
+}
+</script>

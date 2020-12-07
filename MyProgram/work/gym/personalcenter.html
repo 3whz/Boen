@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心</title>
+    <!-- 资源引入 -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- 我的引入 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/personalcenter.css">
+</head>
+
+<body>
+    <div class="wrapper" id="wrapper">
+        <div class="wrapper_face" id="wrapper_face">
+            <div class="face1" id="face1_face2">
+                <div class="face1_head">
+                    <label>个人中心</label>
+                </div>
+                <div class="face1_body_head">
+                    <div class="img__wrapper">
+                        <img src="images/head.jpg" url="personalinformation.html" alt="">
+                    </div>
+
+                    <div class="face1_body_head_one">
+                    </div>
+                    <div>
+                        <svg class="icon" url="personalinformation.html" aria-hidden="true">
+                            <use xlink:href="#icon-arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="face1_body">
+                    <div class="face1_body_top">
+                        <div url="fitnessrecord.html"><span url="fitnessrecord.html">健身记录</span></div>
+                        <div url="fitnessdata.html"><span url="fitnessdata.html"> 健身数据</span></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <svg class="icon" url="myclasslist.html" aria-hidden="true">
+                                <use xlink:href="#icon-kecheng"></use>
+                            </svg><span url="myclasslist.html">我的课程</span></li>
+                        <li>
+                            <svg class="icon" url="coach.html" aria-hidden="true">
+                                <use xlink:href="#icon-gerenzhongxin1"></use>
+                            </svg><span url="coach.html">教练专区</span></li>
+                        <li><svg class="icon" url="myclassreserved.html" aria-hidden="true">
+                                <use xlink:href="#icon-shizhong"></use>
+                            </svg><span url="myclassreserved.html">我的约课</span></li> 
+                        <li>
+                            <svg class="icon" aria-hidden="true" >
+                                <use xlink:href="#icon-gangling"></use>
+                            </svg><span url="login.html">其他</span></li>
+                    </ul>
+                </div>
+
+
+                <!-- 底部 -->
+                <div class="face1_bottom">
+                    <a href="index.html"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shouye_c"></use>
+                        </svg>
+                        <label style=" color: rgb(80, 79, 79);">首页</label></a>
+                    <a href="exercise.html"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yundong_c"></use>
+                        </svg>
+                        <label style="color:rgb(80, 79, 79);">运动</label></a>
+                    <a href="staggerhour.html"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-cuofengjianshen_c"></use>
+                        </svg>
+                        <label style="color:rgb(80, 79, 79);">错峰健身</label></a>
+                    <a href="#"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-gerenzhongxin"></use>
+                        </svg>
+                        <label style="font-size: 1.1rem;color: rgba(228, 0, 0, 0.884);">个人中心</label></a>
+                </div>
+            </div>
+            <div class="face2">
+                <div class="face2_top">
+                    <!-- 头部 -->
+                    <svg class="icon" id="face2_face1" aria-hidden="true">
+                        <use xlink:href="#icon-arrow-left-bold"></use>
+                    </svg>
+                </div>
+                <!-- 放置内嵌网页 -->
+                <div class="body_iframe">
+                    <iframe src="404.html" width="100%" height="100%" class="col-lg-12" frameborder="0" scrolling="0"
+                        id="iframe"></iframe>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 资源引入 -->
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="assets/js/jquery.cookie.js"></script>
+<script src="//at.alicdn.com/t/font_2222363_0a3isic9blba.js"></script>
+<!-- 我的引入 -->
+<script src="js/common.js"></script>
+<script>
+    $(function () {
+        var usera = $.cookie('user');
+        var a = ""
+        if (usera) {
+            //反序列化对象数组
+        var user = JSON.parse(usera);
+                a+=`<div class="img__wrapper">
+                        <img src="images/${user[0].img}" url="personalinformation.html" alt="">
+                    </div>
+
+                    <div class="face1_body_head_one">
+                        <label url="personalinformation.html">${user[0].username}</label>
+                    </div>
+                    <div>
+                        <svg class="icon" url="personalinformation.html" aria-hidden="true">
+                            <use xlink:href="#icon-arrow-right"></use>
+                        </svg>
+                    </div>` 
+        } else {
+            a+=`<div class="img__wrapper">
+                        <img src="images/head.jpg" url="login.html" alt="">
+                    </div>
+
+                    <div class="face1_body_head_one">
+                        <label url="login.html">登录</label>
+                    </div>
+                    <div>
+                        <svg class="icon" url="login.html" aria-hidden="true">
+                            <use xlink:href="#icon-arrow-right"></use>
+                        </svg>
+                    </div>` 
+        }
+        $(".face1_body_head").html(a);
+    });
+    // function removeCookie() {
+    //     $.removeCookie('user', { path: '/' });
+    // }
+</script>

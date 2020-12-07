@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>单个课程</title>
+    <!-- 资源引入 -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="css/oneclass.css">
+</head>
+
+<body>
+    <div>
+        <img src="images/banner.png" alt="">
+        <h2>课程名</h2>
+        <p>
+            详情啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊强强强强强强强强强强强强
+        </p>
+    </div>
+    <button type="button" onclick="classvoid()">开始练习</button>
+</body>
+
+</html>
+<script src="assets/js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function () {
+        var id = oneValues();
+        if (id) {
+            $.ajax({
+                url: "http://localhost:8081/GymClassSelect",
+                data: { "id": id },//携带参数
+                //data:"username=aaa&age=23",
+                dataType: "json",
+                type: "get",
+                // cache: true,//true  缓存
+                // async: true,// 异步  ， false 同步
+                // contentType: "application/x-www/form-urlencoded",//application-json
+                success: function (result, status) {//响应成功后回调
+                    if (status == "success" && result.length != 0) {
+                        var menu = "";
+                        result.forEach(function (item) {
+                            //字符串模板 拼接左侧选项菜单
+                            menu += `	
+                        <div>
+                        <img src="images/${item.img}" alt="">
+                        <h2>${item.name}</h2>
+                        <p>
+                            ${item.text}
+                        </p>
+                        </div>`
+                            if (item.u_id == 0) {
+                                menu += `
+                        <a type="button" href="appointment.html">预约</a>									
+    					`} else {
+                                menu += `
+                        <a type="button" href="video.html">开始练习</a>`
+                            }
+                        })
+                        $("body").html(menu);
+                    } else {
+                        console.log("暂无数据")
+                    }
+                },
+                //fail
+                error: function () {
+                    alert("出错了")
+                }
+            });
+        }
+
+    });
+
+
+    //接收一个值
+    function oneValues() {
+        var result;
+        var url = window.location.search; //获取url中"?"符后的字串  
+        if (url.indexOf("?") != -1) {
+            result = url.substr(url.indexOf("=") + 1);
+        }
+        return result;
+    }
+    function classvoid() {
+        top.location.href = "video.html";
+    }
+
+</script>

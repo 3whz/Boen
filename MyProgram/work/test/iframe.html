@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="left" class="left">
+        <div class='item'>
+
+            <div class="firstitem">一级菜单-网址</div>
+
+            <div class="secitem" url="http://www.baidu.com">二级菜单-百度</div>
+            <div class="secitem" url="http://www.taobao.com">二级菜单-淘宝</div>
+            <div class="secitem" url="http://www.csdn.net">二级菜单-csdn</div>
+
+        </div>
+        <div class='item'>
+            <div class="firstitem">一级菜单-xxx</div>
+
+            <div class="secitem" url="http://www.baidu.com">二级菜单-百度</div>
+            <div class="secitem" url="http://www.taobao.com">二级菜单-淘宝</div>
+            <div class="secitem" url="http://www.csdn.net">二级菜单-csdn</div>
+        </div>
+
+    </div>
+
+
+
+    <div id="if" class="right">
+        <iframe id="iframe" src="wel.jsp"></iframe>
+    </div>
+
+</body>
+
+</html>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+    // 	侧边栏的点击
+    $("#left").click(function (event) {
+        var $target = $(event.target);
+        if ($target.hasClass("firstitem")) {
+            var $arr1 = $target.parent().children();
+            for (var i = 0; i < $arr1.length; i++) {
+                if ($($arr1[i]).hasClass("secitem")) {
+                    if ($($arr1[i]).css("display") == "block") {
+                        $($arr1[i]).css("display", "none");
+                    } else {
+                        $($arr1[i]).css("display", "block");
+                    }
+                }
+            }
+        }
+        //iframe跳转
+        if ($target.hasClass("secitem")) {
+            var $url = $target.attr("url");
+            var $iframe = $("#iframe");
+            $iframe.attr("src", $url);
+        }
+    });
+</script>

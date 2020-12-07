@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login - srtdash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/metisMenu.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="assets/css/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/default-css.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- login area start -->
+    <div class="login-area login-s2">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form action="{% url 'App:login' %}" method="post" id="formid">
+                    <div class="login-form-head">
+                        <h4>Sign In</h4>
+                        <p>Hello there, Sign in and start managing your Admin Template</p>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <label for="exampleInputEmail1">account</label>
+                            <input type="text" id="account">
+                            <i class="ti-user"></i>
+                        </div>
+                        <div class="form-gp">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" id="password">
+                            <i class="ti-lock"></i>
+                        </div>
+                        <div class="row mb-4 rmber-area">
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                    <label class="custom-control-label" for="customControlAutosizing">Remember
+                                        Me</label>
+                                </div>
+                            </div>
+                            <div class="col-6 text-right">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                        </div>
+                        <div class="submit-btn-area"onclick="ajaxFun()">
+                            <button id="form_submit" type="button" >login <i
+                                    class="ti-arrow-right"></i></button>
+                        </div>
+                        <div class="form-footer text-center mt-5">
+                            <p class="text-muted">Don't have an account? <a href="register.html">Sign up</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<!-- login area end -->
+
+<!-- jquery latest version -->
+<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/metisMenu.min.js"></script>
+<script src="assets/js/jquery.slimscroll.min.js"></script>
+<script src="assets/js/jquery.slicknav.min.js"></script>
+<script src="assets/js/jquery.cookie.js"></script>
+<!-- others plugins -->
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script type="text/javascript">
+    function ajaxFun() {
+        var aaa = $("#account").val()
+        var bbb = $("#password").val()
+        if(bbb && aaa){
+            $.ajax({
+            url: "http://localhost:8081/SelectAdmin",
+            data: { "account": aaa, "password": bbb },
+            //data:"username=aaa&age=23",
+            dataType: "json",
+            type: "post",
+            // cache: true,//true  缓存
+            // async: true,// 异步  ， false 同步
+            // contentType: "application/x-www/form-urlencoded",//application-json
+            success: function (result, status) {//响应成功后回调
+//不知道为什么只走success了
+                if(result!=""){
+//存到cookie
+                    var admin = JSON.stringify(result)
+                    $.cookie('admin', admin, { expires: 7, path: '/' });
+
+                window.location.href = "index.html";
+
+                }else{
+                    alert("账号或密码错误！")
+                }
+                
+            },
+            //fail
+            error: function () {
+                alert("账号或密码错误！")
+            }
+        });
+        }else if(!aaa){
+            alert("账号不能为空！")
+        }else{
+            alert("密码不能为空！")
+        }
+        
+
+    }
+
+</script>

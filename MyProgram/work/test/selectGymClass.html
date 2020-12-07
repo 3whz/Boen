@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <div class="search_show">
+        <!--搜索出来的数据显示在这里-->
+    </div>
+</body>
+
+</html>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    //搜索功能,手指离开键盘时触发
+    $("input").keyup(function () {
+        search()
+    });
+    //搜索功能,提交ajax数据到后台
+    function search() {
+        var html = ''
+        var key = $("input").val()
+        var datas = { 'name': key };
+        $.ajax({
+            url: 'http://localhost:8081/SelectGymClass',
+            data: datas,
+            type: 'POST',
+            dataType: 'json',
+            success: function (result, status) {
+                if (status == "success" && result.length != 0) {
+                    var menu = "";
+                    result.forEach(function (item) {
+                        //字符串模板 拼接左侧选项菜单
+                        menu += `<tr>
+                    <th data-id="${item.id}">${item.id}</th>
+                    <td>${item.name}</td>`
+                            ;
+                    })
+                    $('.search_show').html(menu)//显示数据，同时覆盖上一次搜索的数据
+                }
+            },
+        });
+    }
+</script>

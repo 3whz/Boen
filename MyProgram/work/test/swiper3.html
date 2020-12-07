@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+</head>
+
+<body>
+    <style>
+        .swiper-slide {
+            width: 300px;
+            /*设为固定值*/
+            width: auto;
+            /*根据内容调整宽度*/
+        }
+        .swiper-slide img{
+            width: 132px;
+            height: 100px;
+        }
+    </style>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/banner.png"></div>
+            <div class="swiper-slide"><img src="img/banner2.jpg"></div>
+            <div class="swiper-slide"><img src="img/banner.png"></div>
+            <div class="swiper-slide"><img src="img/banner2.jpg"></div>
+            <div class="swiper-slide"><img src="img/banner.png"></div>
+            <div class="swiper-slide"><img src="img/banner2.jpg"></div>
+            <div class="swiper-slide"><img src="img/banner.png"></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+        <!-- 如果需要导航按钮 -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+
+        <!-- 如果需要滚动条 -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+
+</body>
+
+</html>
+<script src="js/swiper-bundle.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        // slidesPerView: 2,
+        // slidesPerView : 'auto',  //  根据slide的宽度自动调整展示数量。此时需要设置slide的宽度，如下style所示
+        //slidesPerView : 3.7,
+        slidesPerView : 2.7,
+    })
+</script>

@@ -1,0 +1,83 @@
+.face1_body_head {
+    width: 100%;
+    height: 7rem;
+    border-bottom:1px solid  rgb(221, 218, 218);
+    display: flex;
+    /* x轴不换行 */
+    flex-flow: row nowrap;
+    /* 靠边均分 */
+    justify-content: space-between;
+}
+.img__wrapper {
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.face1_body_head_one{
+    margin: 1.875rem 8rem 0px 0;
+}
+
+
+.face1_body_head .icon {
+    /*通过设置font-size来该表图标大小*/
+    font-size: 2rem;
+    width: 1em;
+    height: 1em;
+    /*图标和文字相邻时垂直对齐*/
+    vertical-align: -0.15em;
+    /*通过设置color来改变svg颜色/fill*/
+    fill: currentColor;
+    /*path和stroke溢出vieBwox部分在IE下会显示
+normalize。css中也包含这行*/
+    overflow: hidden;
+    margin: 2rem 2rem 0 0 ;
+}
+.face1_body{
+    background-color: rgb(247, 246, 248);
+}
+.face1_body ul{
+    margin: .4rem;
+    display: flex;
+    /*x轴换行 */
+    flex-flow: row wrap;
+    /*等距均分 */
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+}
+.face1_body ul li{
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    /*x轴换行 */
+    flex-flow: column nowrap;
+    /*等距均分 */
+    justify-content: space-around;
+    align-items: center;
+}
+.face1_body ul li .icon{
+    font-size: 2rem;
+}
+.face1_body_top{
+    margin: .4rem;
+    display: flex;
+    /*x轴换行 */
+    flex-flow: row nowrap;
+    /*等距均分 */
+    justify-content: space-between;
+}
+.face1_body_top div{
+    background-color: rgb(255, 255, 255);
+    
+    width: 11rem;
+    height: 7rem;
+}

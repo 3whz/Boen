@@ -1,0 +1,5 @@
+http://localhost:8080/gym/index.html
+
+
+图片路径
+/upload/aa.jpg

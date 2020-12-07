@@ -1,0 +1,96 @@
+/*阿里图标库 全部部*/
+.icon {
+    /*通过设置font-size来该表图标大小*/
+    font-size: 1rem;
+    width: 1em;
+    height: 1em;
+    /*图标和文字相邻时垂直对齐*/
+    vertical-align: -0.15em;
+    /*通过设置color来改变svg颜色/fill*/
+    fill: currentColor;
+    /*path和stroke溢出vieBwox部分在IE下会显示
+normalize。css中也包含这行*/
+    overflow: hidden;
+}
+
+/* 切换 */
+.wrapper {
+    width: 100%;
+    /* 清除滑动  这里就是全部清除 */
+    overflow: hidden;
+}
+
+.wrapper_face {
+    width: 200%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/* face1face2设置弹性盒子 */
+.face1,
+.face2 {
+    flex: 1;
+    display: flex;
+    /* y轴不换行 */
+    flex-flow: column nowrap;
+    /* 靠边均分 */
+    justify-content: space-between;
+}
+
+/* face1部分 */
+/* 头部 */
+.face1_head {
+    width: 100%;
+    height: 2rem;
+    border-bottom:1px solid  rgb(221, 218, 218);
+}
+
+/*打开剩余空间的滑动*/
+.face1_body {
+    overflow: auto;
+    flex: 1;
+}
+
+/*底部*/
+.face1_bottom {
+    border-top: 1px solid rgb(247, 246, 248);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.face1_bottom a {
+    display: flex;
+    flex-flow: column nowrap;
+    /*居中*/
+    align-items: center;
+}
+
+/*阿里图标库 底部*/
+.face1_bottom .icon {
+    /*通过设置font-size来该表图标大小*/
+    font-size: 2rem;
+    width: 1em;
+    height: 1em;
+    /*图标和文字相邻时垂直对齐*/
+    vertical-align: -0.15em;
+    /*通过设置color来改变svg颜色/fill*/
+    fill: currentColor;
+    /*path和stroke溢出vieBwox部分在IE下会显示
+normalize。css中也包含这行*/
+    overflow: hidden;
+}
+
+/* face2部分 */
+.face2_top {
+    height: 2rem;
+    border-bottom:1px solid  rgb(221, 218, 218);
+}
+.face2_top .icon{
+    margin:.5rem ;
+}
+
+/*放的其他页面站剩余部分*/
+.face2 .body_iframe {
+    flex: 1;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+</head>
+
+<body>
+	<ul>
+		<li></li>
+	</ul>
+</body>
+</html>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+$(function () {
+		console.log($.ajax())		
+		$.ajax({
+			url: "http://localhost:8080/UserSelectAll",
+			//data: {"username":"aaa","age":22},//携带参数
+			//data:"username=aaa&age=23",
+			dataType: "json",
+			type: "get",
+			// cache: true,//true  缓存
+			// async: true,// 异步  ， false 同步
+			// contentType: "application/x-www/form-urlencoded",//application-json
+			success: function (result, status) {//响应成功后回调
+				if (status == "success" && result.length != 0) {
+					var menu = "";
+					result.forEach(function (item) {
+						//字符串模板 拼接左侧选项菜单
+						menu += `
+						<li data-id="${item.id}">${item.username}</li>						
+						`;
+					})
+					$("ul").html(menu);
+				} else {
+					console.log("暂无数据")
+				}
+			},
+			//fail
+			error: function () {
+				alert("出错了")
+			}
+		});
+
+		function getData(id) {
+			$.ajax({
+				url: `http://112.126.73.222:8081/commodity/${id}`,
+				data: {
+					pageNum: 1,
+					pageSize: 10
+				},
+				type: "post",
+				success: function (data) {
+					//$.ajax
+					//回调地狱？
+					// {
+					// 	code:200,
+					// 	status:1,//0
+					// 	data:[]//{}
+					// }
+					console.log(data)
+					if (status == "success" || data.length != 0) {
+						console.log(data)
+						var list = "";
+						data.forEach(function (item) {
+							//拼接右侧展示区
+							list += `
+											<figure>
+												<img src="${item.commodityImg}" class="ad">
+												<figcaption>${item.commodityName}</figcaption>
+											</figure>
+											`
+						})
+						$(".list").html(list)
+					}
+				}
+			})
+		}
+
+	});
+</script>

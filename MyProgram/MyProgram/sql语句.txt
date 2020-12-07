@@ -1,0 +1,33 @@
+//链表查询
+SELECT g.*,u.id as uid,u.username,u.`password` FROM `user` u
+left outer join user_gymclass ug  on u.id=ug.u_id
+left outer join gymclass g on g.id=ug.c_id
+
+//mybits注解
+//条件select
+ @Select({"<script> SELECT * FROM admin WHERE 1=1" +
+            "<if  test= 'id != null'> AND id = #{id} </if>" +
+            "<if  test= 'account != null'> AND account = #{account} </if>" +
+            "<if  test= 'password != null'>  AND password=#{password} </if>" +
+            "<if  test= 'email != null'> AND email = #{email} </if>" +
+            "<if  test= 'jurisdiction != null'> AND jurisdiction = #{jurisdiction} </if>" +
+            "<if  test= 'state != null'> AND state = #{state} </if>" +
+            "</script>"})
+
+//添加     自动返填主键   可直接通过打点调用
+ @Insert("insert into admin (account,password,email,jurisdiction,state) values (#{account},#{password},#{email},#{jurisdiction},1)")
+    @Options(useGeneratedKeys=true, keyProperty="id", keyColumn="id")
+
+//修改  参数已经有的就传不然成空了
+@Update("update admin set account=#{account},password=#{password},email=#{email},jurisdiction=#{jurisdiction},state=#{state} where id=#{id}")
+
+//修改  之后的修改
+@Update({"<script> update user set" +
+            "<if  test= 'username != null'> username = #{username}, </if>" +
+            "<if  test= 'password != null'>  password=#{password}, </if>" +
+            "<if  test= 'sex != null'> sex=#{sex}, </if>" +
+            "<if  test= 'email != null'> email=#{email}, </if>" +
+            "<if  test= 'img != null'> img=#{img}, </if>" +
+            "<if  test= 'coach != null'> coach=#{coach}, </if>" +
+            "<if  test= 'state != null'> state=#{state}, </if>" +
+            "id =#{id} where id=#{id} </script>"})

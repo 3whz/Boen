@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    a标签:<a href="http://www.jb51.net" title="脚本之家">Welcome</a>
+
+<a href= “javascript:history.go(-1)”>  :上一个页面，就是前一个页面
+
+<a href= “javascript:history.go(1)”>  :下一个页面，就是后一个页面
+
+<a href="http://www.jb51.net" title="脚本之家" target="_blank">Welcome</a>
+</body>
+</html>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+ $(function () {
+
+     //在同当前窗口中打开窗口
+    // window.location.href="http://www.jb51.net"; 
+    //   //在另外新建窗口中打开窗口
+    window.open("http://www.jb51.net","_blank");
+    })
+</script>

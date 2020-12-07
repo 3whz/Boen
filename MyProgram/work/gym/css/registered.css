@@ -1,0 +1,50 @@
+/* 图标 */
+.icon {
+    /*通过设置font-size来该表图标大小*/
+    font-size: 2rem;
+    width: 1em;
+    height: 1em;
+    /*图标和文字相邻时垂直对齐*/
+    vertical-align: -0.15em;
+    /*通过设置color来改变svg颜色/fill*/
+    fill: currentColor;
+    /*path和stroke溢出vieBwox部分在IE下会显示
+normalize。css中也包含这行*/
+    overflow: hidden;
+}
+.body_w{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    /* 居中 */
+    align-items: center;
+}
+.body_w h1{
+    font-size: 2.5rem;
+}
+.body_w  form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    margin-bottom:15rem ;
+}
+.body_w  .form_input{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 7rem;
+}
+.body_w  .form_input div{
+    border-bottom: 1px solid rgb(187, 184, 184);
+}
+.body_w  .form_input div label{
+    background-color: rgb(169, 163, 240);
+    color: #fff;
+}
+
+.body_w  form button{
+    background-color:  rgb(169, 163, 240);
+    color: #fff;
+    margin-top:1rem ;
+    height: 2rem;
+}

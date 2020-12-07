@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="form" >
+        密码:<input type="text" name="first" id="first">
+        账号:<input type="text" name="second" id="second"><br>
+        <button type="button" onclick="ajaxFun()">登录</button> 
+    </form>
+</div>
+</body>
+</html>
+<script src="js/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    function ajaxFun(){
+        var aaa=$("#first").val()
+        var bbb=$("#second").val()
+        $.ajax({
+			url: "http://localhost:8080/AdminLogin",
+			data: {"account":aaa,"password":bbb},
+			//data:"username=aaa&age=23",
+			dataType: "json",
+			type: "post",
+			// cache: true,//true  缓存
+			// async: true,// 异步  ， false 同步
+			// contentType: "application/x-www/form-urlencoded",//application-json
+			success: function (result, status) {//响应成功后回调
+                window.location.href = "aaaa.html";
+			},
+			//fail
+			error: function () {
+				alert("出错了")
+			}
+		});
+
+    }
+
+</script>

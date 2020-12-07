@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>个人信息</title>
+    <!-- 资源引入 -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="assets/js/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 我的引入 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/personalinformation.css">
+</head>
+
+<body>
+    <ul class="body_ul">
+        <li></li>
+    </ul>
+
+    <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					性别
+				</h4>
+			</div>
+			<div class="modal-body" id="modal_body">
+				<ul>
+                    <li>男</li>
+                    <li class="modal_body_li">女</li>
+                </ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary " data-dismiss="modal" onclick="update()">
+					完成
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+</body>
+
+</html>
+<!-- 资源引入 -->
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/jquery.cookie.js"></script>
+<script src="//at.alicdn.com/t/font_2222363_0a3isic9blba.js"></script>
+<!-- 我的引入 -->
+<script src="js/common.js"></script>
+<script src="js/personalinformation.js"></script>
